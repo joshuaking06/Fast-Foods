@@ -1,16 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Link, BrowserRouter, Route, Switch } from 'react-router-dom'
-import FastFoodsIndex from './components/FastFoodsIndex'
+import Restaurants from './components/Restaurants'
 import Home from './components/Home'
+import RestaurantsNew from './components/RestaurantsNew'
 
 import axios from 'axios'
 
 class App extends React.Component{
-  componentDidMount(){
-    axios.get('/api/fast-foods')
-      .then(res => console.log(res))
-  }
+
 
   render(){
     return(
@@ -19,8 +17,10 @@ class App extends React.Component{
           <h1> Fast Food Lovers! </h1>
 
 
+
           <Switch>
-            <Route path="/restaurants" component={FastFoodsIndex}/>
+            <Route path="/restaurants/new" component={RestaurantsNew}/>
+            <Route path="/restaurants" component={Restaurants}/>
             <Route path="/" component={Home}/>
           </Switch>
         </main>
