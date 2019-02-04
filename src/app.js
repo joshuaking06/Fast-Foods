@@ -20,7 +20,7 @@ class App extends React.Component{
 
 
           <Switch>
-            <Route path="/fast-foods" component={FastFoodsIndex}/>
+            <Route path="/restaurants" component={FastFoodsIndex}/>
             <Route path="/" component={Home}/>
           </Switch>
         </main>
