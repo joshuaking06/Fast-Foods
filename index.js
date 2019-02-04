@@ -8,12 +8,12 @@ const routes = require('./config/routes')
 const app = express()
 
 app.use(express.static(`${__dirname}/dist`))
-app.get('/*', (req,res) => res.sendFile(`${__dirname}/dist/index.html`))
 
 mongoose.connect(process.env.MONGODB_URI)
 
 app.use(bodyParser.json())
 
 app.use('/api',routes)
+app.get('/*', (req,res) => res.sendFile(`${__dirname}/dist/index.html`))
 
 app.listen(process.env.PORT, () => console.log(`express running on ${process.env.PORT}`))
