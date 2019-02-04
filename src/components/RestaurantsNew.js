@@ -26,7 +26,8 @@ class RestaurantsNew extends React.Component{
   handleSubmit(e){
     e.preventDefault()
     axios.post('/api/fast-foods', this.state.postData)
-      .then(res => console.log(res))
+      .then(res => this.props.history.push('/restaurants'))
+
   }
 
   render(){
